@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:talkbox_v1/screens/actions_page.dart';
 import 'package:talkbox_v1/screens/animals_page.dart';
+import 'package:talkbox_v1/screens/foods_page.dart';
 import 'package:talkbox_v1/screens/home_page.dart';
 import 'package:talkbox_v1/screens/objects_page.dart';
 import 'package:talkbox_v1/screens/persons_page.dart';
@@ -26,6 +27,7 @@ class MainApp extends StatelessWidget {
         '/lugares': (context) => const PlacesPage(),
         '/posiciones': (context) => const PositionsPage(),
         '/acciones': (context) => const ActionsPage(),
+        '/comidas': (context) => const FoodsPage(),
       },
     );
   }
