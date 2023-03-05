@@ -18,17 +18,28 @@ class ButtonGridWidget extends StatelessWidget {
           child: GridView.builder(
             gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                 maxCrossAxisExtent: 200,
-                childAspectRatio: 3 / 2,
+                childAspectRatio: 2 / 2,
                 crossAxisSpacing: 20,
                 mainAxisSpacing: 20),
             itemCount: data.length,
             itemBuilder: (context, index) {
-              return Container(
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                    color: Colors.black12,
-                    borderRadius: BorderRadius.circular(5)),
-                child: Text(data[index].title),
+              return Card(
+                child: InkWell(
+                  onTap: () {
+                    debugPrint("tapped");
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.all(12.0),
+                    color: Colors.black87,
+                    child: Center(
+                      child: Text(
+                        data[index].title.toUpperCase(),
+                        style: const TextStyle(
+                            color: Colors.white70, fontSize: 16.0),
+                      ),
+                    ),
+                  ),
+                ),
               );
             },
           ),
