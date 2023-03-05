@@ -54,6 +54,5 @@ class _PositionsPageState extends State<PositionsPage> {
         body: ButtonGridWidget(data: positionsButtons),
       ),
     );
-    ;
   }
 }
