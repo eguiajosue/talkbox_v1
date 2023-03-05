@@ -10,7 +10,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   //!  LISTA DE PRUEBA - ELIMINAR!
-  List<String> items = List<String>.generate(5, (i) => 'Palabra $i');
+  List<String> items = List<String>.generate(4, (i) => 'Palabra $i');
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +34,7 @@ class _HomePageState extends State<HomePage> {
                   style: const TextStyle(fontSize: 20),
                 ),
                 onTap: () {
+                  Navigator.pop(context);
                   Navigator.pushNamed(context, drawerButtons[index].route);
                 },
               ),
@@ -45,7 +46,10 @@ class _HomePageState extends State<HomePage> {
         children: [
           const Text(
             "TalkBox",
-            style: TextStyle(fontSize: 75.0),
+            style: TextStyle(
+                fontSize: 75.0,
+                letterSpacing: 10.0,
+                fontWeight: FontWeight.bold),
           ),
           const SizedBox(
             height: 20.0,
