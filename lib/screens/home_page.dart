@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:talkbox_v1/data/drawer_buttons.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -9,9 +10,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  //!  LISTA DE PRUEBA - ELIMINAR!
-  List<String> items = List<String>.generate(4, (i) => 'Palabra $i');
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -22,63 +20,87 @@ class _HomePageState extends State<HomePage> {
         iconTheme: const IconThemeData(color: Colors.black),
       ),
       drawer: Drawer(
-        child: ListView.builder(
-          itemCount: drawerButtons.length,
-          itemBuilder: (context, index) {
-            return Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ListTile(
-                leading: Icon(drawerButtons[index].icon),
-                title: Text(
-                  drawerButtons[index].title.toUpperCase(),
-                  style: const TextStyle(fontSize: 20),
-                ),
-                onTap: () {
-                  Navigator.pop(context);
-                  Navigator.pushNamed(context, drawerButtons[index].route);
+        child: Column(
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.purple.shade900,
+              ),
+              margin: EdgeInsets.zero,
+              padding: EdgeInsets.zero,
+              child: Center(
+                child: Text('TalkBox',
+                    style: GoogleFonts.bebasNeue(
+                      textStyle: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 45,
+                          letterSpacing: 10.0),
+                    )),
+              ),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: drawerButtons.length,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ListTile(
+                      tileColor: Colors.grey.shade100,
+                      // leading: Icon(drawerButtons[index].icon),
+                      title: Text(
+                        drawerButtons[index].title.toUpperCase(),
+                        style: const TextStyle(fontSize: 20),
+                      ),
+                      onTap: () {
+                        Navigator.pop(context);
+                        Navigator.pushNamed(
+                            context, drawerButtons[index].route);
+                      },
+                    ),
+                  );
                 },
               ),
-            );
-          },
+            ),
+          ],
         ),
       ),
-      body: Column(
-        children: [
-          const Text(
-            "TalkBox",
-            style: TextStyle(
-                fontSize: 75.0,
-                letterSpacing: 10.0,
-                fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(
-            height: 20.0,
-          ),
-          Expanded(
+      body: Container(
+        color: Colors.white,
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: 80),
+          child: Expanded(
               child: ListView.builder(
-            itemCount: items.length,
+            itemCount: 15,
             itemBuilder: (context, index) {
-              return Card(
+              return Padding(
+                padding: const EdgeInsets.all(8.0),
                 child: ListTile(
-                    leading: const FlutterLogo(),
-                    title: Text(items[index]),
+                    title: Text("Palabra $index",
+                        style: GoogleFonts.montserrat(
+                          textStyle: const TextStyle(
+                              fontSize: 20.0, fontWeight: FontWeight.bold),
+                        )),
+                    subtitle: const Text("Categoría:"),
                     trailing: IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.delete,
-                        color: Colors.red.shade900,
-                      ),
-                    )),
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.delete,
+                          color: Colors.red,
+                          size: 30.0,
+                        ))),
               );
             },
           )),
-        ],
+        ),
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {},
         icon: const Icon(Icons.volume_up_rounded),
         label: const Text("Hablar!"),
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.deepPurple.shade900,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     ));

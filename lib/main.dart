@@ -7,6 +7,7 @@ import 'package:talkbox_v1/screens/objects_page.dart';
 import 'package:talkbox_v1/screens/persons_page.dart';
 import 'package:talkbox_v1/screens/places_page.dart';
 import 'package:talkbox_v1/screens/positions_page.dart';
+import 'package:talkbox_v1/screens/start_page.dart';
 
 void main() {
   runApp(const MainApp());
@@ -18,9 +19,9 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const HomePage(),
+      home: const StartPage(),
       routes: {
-        // '/': (context) => const HomePage(),
+        '/inicio': (context) => const HomePage(),
         '/personas': (context) => const PersonsPage(),
         '/animales': (context) => const AnimalsPage(),
         '/objetos': (context) => const ObjectsPage(),
