@@ -13,7 +13,6 @@ final personButtons = [
   ElementButton(title: "Doctora", value: "Doctora", category: "profesiones"),
   ElementButton(title: "Amigo", value: "Amigo", category: "otros"),
   ElementButton(title: "Amiga", value: "Amiga", category: "otros"),
-  // ElementButton(title: "title", value: "value", category:""),
 ];
 
 final animalsButtons = [
@@ -107,17 +106,6 @@ final positionsButtons = [
   ElementButton(title: "Sobre", value: "Sobre", category: ""),
   ElementButton(title: "Atrás", value: "Atrás", category: ""),
   ElementButton(title: "Adelante", value: "Adelante", category: ""),
-  // ElementButton(title: "title", value: "value", category: ""),
-  // ElementButton(title: "title", value: "value", category: ""),
-  // ElementButton(title: "title", value: "value", category: ""),
-  // ElementButton(title: "title", value: "value", category: ""),
-  // ElementButton(title: "title", value: "value", category: ""),
-  // ElementButton(title: "title", value: "value", category: ""),
-  // ElementButton(title: "title", value: "value", category: ""),
-  // ElementButton(title: "title", value: "value", category: ""),
-  // ElementButton(title: "title", value: "value", category: ""),
-  // ElementButton(title: "title", value: "value", category: ""),
-  // ElementButton(title: "title", value: "value", category: ""),
 ];
 
 final actionsButtons = [
@@ -171,4 +159,12 @@ final foodsButtons = [
   ElementButton(title: "Elote", value: "Elote", category: "verduras"),
   ElementButton(title: "Calabaza", value: "Calabaza", category: "verduras"),
   ElementButton(title: "Aguacate", value: "Aguacate", category: "verduras"),
+];
+
+final feelingsButtons = [
+  ElementButton(title: "Felíz", value: "Felíz", category: "sentimientos"),
+  ElementButton(title: "Triste", value: "Triste", category: "sentimientos"),
+  ElementButton(title: "Enojado", value: "Enojado", category: "sentimientos"),
+  ElementButton(title: "Aburrido", value: "Aburrido", category: "sentimientos"),
+  ElementButton(title: "Nervioso", value: "Nervioso", category: "sentimientos"),
 ];

@@ -10,6 +10,18 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List<String> arraySentence = [];
+
+  @override
+  void initState() {
+    // arraySentence.add("Mamá");
+    // arraySentence.add("Quiero");
+    // arraySentence.add("Ir");
+    // arraySentence.add("Baño");
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -73,19 +85,23 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.only(bottom: 80),
           child: Expanded(
               child: ListView.builder(
-            itemCount: 15,
+            itemCount: arraySentence.length,
             itemBuilder: (context, index) {
               return Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: ListTile(
-                    title: Text("Palabra $index",
+                    title: Text(arraySentence[index],
                         style: GoogleFonts.montserrat(
                           textStyle: const TextStyle(
                               fontSize: 20.0, fontWeight: FontWeight.bold),
                         )),
                     subtitle: const Text("Categoría:"),
                     trailing: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(() {
+                            arraySentence.removeAt(index);
+                          });
+                        },
                         icon: const Icon(
                           Icons.delete,
                           color: Colors.red,
@@ -97,7 +113,13 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {},
+        onPressed: () {
+          setState(() {
+            arraySentence.add("Mamá");
+            arraySentence.add("Quiero");
+            arraySentence.add("Comer");
+          });
+        },
         icon: const Icon(Icons.volume_up_rounded),
         label: const Text("Hablar!"),
         backgroundColor: Colors.deepPurple.shade900,

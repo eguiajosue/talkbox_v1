@@ -9,4 +9,6 @@ final drawerButtons = [
   DrawerButton("Posiciones", Icons.person, '/posiciones'),
   DrawerButton("Acciones", Icons.person, '/acciones'),
   DrawerButton("Comida", Icons.person, '/comidas'),
+  DrawerButton("Sentimientos", Icons.person, '/sentimientos'),
+  DrawerButton("⭐ Frases Favoritas", Icons.person, '/sentimientos'),
 ];

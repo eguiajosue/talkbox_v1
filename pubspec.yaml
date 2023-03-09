@@ -7,9 +7,13 @@ environment:
   sdk: '>=3.0.0-179.0.dev <4.0.0'
 
 dependencies:
+  firebase_auth: ^4.2.9
+  firebase_core: ^2.7.0
   flutter:
     sdk: flutter
+  font_awesome_flutter: ^10.4.0
   google_fonts: ^4.0.3
+  google_sign_in: ^6.0.2
 
 dev_dependencies:
   flutter_test:
